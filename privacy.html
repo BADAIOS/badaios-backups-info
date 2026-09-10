@@ -13,7 +13,7 @@
 <p>Effective September 10, 2026.</p>
 <h2>Purpose and Google Drive access</h2>
 <p>BADAIOS Backups is a private configuration operated by its owner, not a public service. It uses rclone on the owner's computer to upload, list, verify, and retrieve owner-selected encrypted backups in Google Drive.</p>
-<p>The Google Drive permission requested by this configuration permits access to Drive files beyond the backup archives. That broader permission is needed to work with existing backup files as well as newly created ones; it is not a promise that Google restricts the authorization to one backup folder. The configuration is intended only for the owner's backup operations.</p>
+<p>This configuration requests Google's <code>drive.file</code> permission, not unrestricted Google Drive access. That permission covers files created with the app or explicitly selected for use with it. In this rclone configuration, the app creates and manages its own backup files. Older archives made by a different client are not automatically accessible; the owner can retrieve those separately through their Google Drive account.</p>
 <h2>Storage and protection</h2>
 <p>Archive contents are encrypted locally before upload. Google Drive stores the encrypted archives and associated backup metadata. Encryption recovery material is kept separately from the uploaded archives. OAuth credentials are stored locally with restricted file permissions and used to authorize requests to Google's authentication and Drive services.</p>
 <p>Operational records may contain file names, archive sizes, checksums, timestamps, account identifiers, and success or failure information. Those records are retained locally or in the owner's private operational records, not published on this website.</p>
